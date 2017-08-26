@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.example.oauthsecurity5client.ClientRegistrationAutoConfiguration,\
+com.example.oauthsecurity5client.OAuth2LoginAutoConfiguration

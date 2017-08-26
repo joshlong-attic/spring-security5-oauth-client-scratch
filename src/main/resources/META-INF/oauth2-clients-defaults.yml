@@ -1,0 +1,13 @@
+security:
+  oauth2:
+    client:
+      uaa :
+        client-authentication-method: basic
+        authorized-grant-type: authorization_code
+        redirect-uri: "http://localhost:8080/oauth2/authorize/code/uaa"
+        scopes: openid
+        authorization-uri: "http://localhost:9191/oauth/authorize"
+        token-uri: "http://localhost:9191/oauth/token"
+        user-info-uri: "http://localhost:9191/user"
+        client-name: uaa
+        client-alias: uaa
