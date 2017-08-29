@@ -1,4 +1,3 @@
-
 logging:
   level:
     root: INFO
@@ -14,4 +13,4 @@ security:
     client:
       uaa:
         client-id: uaa
-        client-secret: password
+        client-secret: secret

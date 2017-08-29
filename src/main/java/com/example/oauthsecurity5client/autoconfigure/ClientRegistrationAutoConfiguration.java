@@ -1,4 +1,4 @@
-package com.example.oauthsecurity5client;
+package com.example.oauthsecurity5client.autoconfigure;
 
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;

@@ -1,4 +1,4 @@
-package com.example.oauthsecurity5client;
+package com.example.oauthsecurity5client.autoconfigure;
 
 /**
  * @author <a href="mailto:josh@joshlong.com">Josh Long</a>
@@ -22,10 +22,6 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 
 import java.net.URI;
 import java.util.Set;
-
-import static com.example.oauthsecurity5client.ClientRegistrationAutoConfiguration.CLIENT_ID_PROPERTY;
-import static com.example.oauthsecurity5client.ClientRegistrationAutoConfiguration.CLIENT_PROPERTY_PREFIX;
-import static com.example.oauthsecurity5client.ClientRegistrationAutoConfiguration.resolveClientPropertyKeys;
 
 
 /**
@@ -68,10 +64,10 @@ public class OAuth2LoginAutoConfiguration {
         // @formatter:on
 
         private void registerUserNameAttributeNames(OAuth2LoginConfigurer<HttpSecurity> oauth2LoginConfigurer) throws Exception {
-            Set<String> clientPropertyKeys = resolveClientPropertyKeys(this.environment);
+            Set<String> clientPropertyKeys = ClientRegistrationAutoConfiguration.resolveClientPropertyKeys(this.environment);
             for (String clientPropertyKey : clientPropertyKeys) {
-                String fullClientPropertyKey = CLIENT_PROPERTY_PREFIX + "." + clientPropertyKey;
-                if (!this.environment.containsProperty(fullClientPropertyKey + "." + CLIENT_ID_PROPERTY)) {
+                String fullClientPropertyKey = ClientRegistrationAutoConfiguration.CLIENT_PROPERTY_PREFIX + "." + clientPropertyKey;
+                if (!this.environment.containsProperty(fullClientPropertyKey + "." + ClientRegistrationAutoConfiguration.CLIENT_ID_PROPERTY)) {
                     continue;
                 }
                 String userInfoUriValue = this.environment.getProperty(fullClientPropertyKey + "." + USER_INFO_URI_PROPERTY);
